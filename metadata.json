@@ -1,0 +1,6 @@
+{
+  "name": "AgriRide - Farm Equipment Sharing",
+  "description": "Connecting farmers needing agricultural machinery with equipment owners to rent tractors, harvesters, tillers, and sprayers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

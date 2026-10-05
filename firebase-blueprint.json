@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "Registered application users including Farmers and Equipment Owners",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["farmer", "owner"] },
+        "phone": { "type": "string" },
+        "village": { "type": "string" },
+        "district": { "type": "string" },
+        "state": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "equipment": {
+      "title": "Equipment",
+      "description": "Agricultural machinery available for rent",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "brand": { "type": "string" },
+        "ratePerDay": { "type": "number" },
+        "ratePerHour": { "type": "number" },
+        "ownerId": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "name", "category", "ownerId"]
+    },
+    "bookings": {
+      "title": "Booking",
+      "description": "Equipment rental bookings created by farmers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "equipmentId": { "type": "string" },
+        "farmerName": { "type": "string" },
+        "status": { "type": "string" },
+        "totalAmount": { "type": "number" }
+      },
+      "required": ["id", "equipmentId", "status"]
+    }
+  }
+}

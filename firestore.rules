@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User profile: users can read/write their own profile and create during registration
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Equipment listings: public read, write
+    match /equipment/{equipmentId} {
+      allow read, write: if true;
+    }
+
+    // Bookings: public read, write
+    match /bookings/{bookingId} {
+      allow read, write: if true;
+    }
+  }
+}
